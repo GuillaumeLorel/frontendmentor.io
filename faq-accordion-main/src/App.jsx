@@ -49,7 +49,7 @@ function App() {
         <div className="accordion">
           {accordionData.map((item, index) => (
             <div className="accordion__item" key={index}>
-              <h3>
+              <h2>
                 <button
                   className="accordion__trigger"
                   aria-expanded={openAccordionIndex === index}
@@ -59,7 +59,7 @@ function App() {
                   ref={(el) => (accordionRefs.current[index] = el)}>
                   {item.title}
                 </button>
-              </h3>
+              </h2>
               <div
                 className="accordion__text"
                 aria-hidden={openAccordionIndex !== index}
