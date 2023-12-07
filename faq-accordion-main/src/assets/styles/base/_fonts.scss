@@ -1,0 +1,24 @@
+@use "../utils/responsive" as query;
+
+:root {
+  --ff-body: "Work Sans", sans-serif;
+
+  --fs-body: 1.6rem;
+  --fs-titles: 1.8rem;
+  --fs-display: 5.6rem;
+
+  --lh-body: 2.4rem;
+  --fw-body: 400;
+
+  --lh-titles: normal;
+  --fw-titles: 600;
+
+  --lh-display: normal;
+  --fw-display: 700;
+
+  @include query.at-max("sm") {
+    --fs-display: 3.2rem;
+    --fs-titles: 1.6rem;
+    --fs-body: 1.4rem;
+  }
+}
