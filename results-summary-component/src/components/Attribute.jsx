@@ -4,7 +4,7 @@ const Attribute = ({ attribute, score, icon }) => {
   return (
     <div className={`attribute attribute--${attribute}`}>
       <div className="attribute__left">
-        <img src={window.location.origin + icon} alt={attribute} />
+        <img src={icon} alt={attribute} />
         <h3 className={`attribute__title attribute__title--${attribute}`}>
           {attribute}
         </h3>
