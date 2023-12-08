@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/faq-accordion-x_v9o-7Iwk](https://www.frontendmentor.io/solutions/faq-accordion-x_v9o-7Iwk)
-- Live Site URL: [(https://gl-faq-accordion.vercel.app/](https://gl-faq-accordion.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/results-summary-component-dKZi7FWlnd](https://www.frontendmentor.io/solutions/results-summary-component-dKZi7FWlnd)
+- Live Site URL: [(https://gl-results-summary.vercel.app/](https://gl-results-summary.vercel.app/)
 
 ## Author
 
