@@ -1,0 +1,27 @@
+@use "../utils/responsive" as query;
+
+:root {
+  --ff-body: "Hanken Grotesk", sans-serif;
+
+  --fs-body: 1.8rem;
+  --fs-heading-m: 2.4rem;
+  --fs-heading-l: 3.2rem;
+  --fs-heading-xl: 7.2rem;
+
+  --lh-body: normal;
+  --fw-body: 500;
+  --fw-body-bold: 700;
+
+  --lh-heading-xl: 7.2rem;
+
+  --fw-heading-m: 700;
+  --fw-heading-l: 700;
+  --fw-heading-xl: 900;
+
+  @include query.at-max("xs") {
+    --fs-body: 1.6rem;
+    --fs-heading-m: 1.8rem;
+    --fs-heading-l: 2.4rem;
+    --fs-heading-xl: 5.6rem;
+  }
+}

@@ -1,0 +1,60 @@
+.attribute {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1.8rem 1.6rem;
+  border-radius: 1.2rem;
+
+  &__left,
+  &__right {
+    display: flex;
+
+    & > p {
+      font-weight: var(--fw-body-bold);
+
+      & > span {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__left {
+    gap: 1.2rem;
+
+    & > img {
+      width: 2rem;
+      height: auto;
+    }
+  }
+
+  &__title {
+    &--Reaction {
+      color: var(--Red);
+    }
+    &--Memory {
+      color: var(--Yellow);
+    }
+    &--Verbal {
+      color: var(--Green);
+    }
+    &--Visual {
+      color: var(--Blue);
+    }
+  }
+
+  &--Reaction {
+    background-color: var(--Light-Red);
+  }
+
+  &--Memory {
+    background-color: var(--Light-Yellow);
+  }
+
+  &--Verbal {
+    background-color: var(--Light-Green);
+  }
+
+  &--Visual {
+    background-color: var(--Light-Blue);
+  }
+}
