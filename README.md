@@ -4,7 +4,8 @@ This repository is a collection of all my solutions I submitted at [frontendment
 
 ### Newbie
 
-| Tags  | Challenges | Live|  Code|  Type| 
-| --- | -- |  -- | --  |  -- |
-| REACTJS--SCSS--VITE      |  FAQ accordion | [Live](https://gl-faq-accordion.vercel.app/) | [Code](https://github.com/GuillaumeLorel/frontendmentor.io/tree/master/faq-accordion-main) |Free|
-| REACTJS--SCSS--VITE      |  Results summary component | [Live](https://gl-results-summary.vercel.app/) | [Code](https://www.frontendmentor.io/solutions/results-summary-component-dKZi7FWlnd) |Free|
+| Tags                    | Challenges                                   | Live                                              | Code                                                                                                                 | Type |
+| ----------------------- | -------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ---- |
+| REACTJS--SCSS--VITE     | FAQ accordion                                | [Live](https://gl-faq-accordion.vercel.app/)      | [Code](https://github.com/GuillaumeLorel/frontendmentor.io/tree/master/faq-accordion-main)                           | Free |
+| REACTJS--SCSS--VITE     | Results summary component                    | [Live](https://gl-results-summary.vercel.app/)    | [Code](https://www.frontendmentor.io/solutions/results-summary-component-dKZi7FWlnd)                                 | Free |
+| REACTJS--TAILWIND--VITE | Newsletter sign-up form with success message | [Live](https://gl-newsletter-sign-up.vercel.app/) | [Code](https://github.com/GuillaumeLorel/frontendmentor.io/tree/master/newsletter-sign-up-with-success-message-main) | Free |

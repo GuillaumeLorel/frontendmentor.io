@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/results-summary-component-dKZi7FWlnd](https://www.frontendmentor.io/solutions/results-summary-component-dKZi7FWlnd)
-- Live Site URL: [(https://gl-results-summary.vercel.app/](https://gl-results-summary.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/newsletter-sign-up-challenge-using-reactjs-and-tailwind-QFXzsbBPBg](https://www.frontendmentor.io/solutions/newsletter-sign-up-challenge-using-reactjs-and-tailwind-QFXzsbBPBg)
+- Live Site URL: [(https://gl-newsletter-sign-up.vercel.app/)](https://gl-newsletter-sign-up.vercel.app/)
 
 ## Author
 

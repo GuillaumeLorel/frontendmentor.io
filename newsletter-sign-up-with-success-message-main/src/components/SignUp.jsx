@@ -88,7 +88,7 @@ const SignUp = ({ email, setEmail, setSuccess }) => {
             name="email"
             id="email"
             placeholder="email@company.com"
-            className={`w-full rounded-lg border border-opacity-25 px-4 py-3 mt-1 
+            className={`w-full rounded-lg border border-opacity-25 px-4 py-6 mt-1 
             focus:outline-none focus:border-opacity-100 bg-opacity-15 ${
               emailError &&
               "border-vermillion border-opacity-100  text-vermillion placeholder:text-vermillion bg-vermillion "
