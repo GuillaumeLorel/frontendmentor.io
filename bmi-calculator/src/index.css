@@ -48,21 +48,18 @@
   left: 1%;
   width: 98%;
   height: 100%;
+  z-index: -1;
   background: linear-gradient(290deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%);
   opacity: 0.25;
 }
 
 .right-curve::after {
-  content: "";
   position: absolute;
   border-radius: 32px;
   top: 120%;
   right: 50%;
   width: 94px;
   height: 122px;
-  background-image: url("./dist/assets/images/pattern-curved-line-right.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
   @apply hidden xl:block;
 }
 
@@ -74,8 +71,5 @@
   right: 20%;
   width: 85px;
   height: 200px;
-  background-image: url("./dist/assets/images/pattern-curved-line-left.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
   @apply hidden xl:block;
 }

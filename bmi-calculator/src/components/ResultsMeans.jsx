@@ -9,7 +9,7 @@ const ResultsMeans = () => {
         alt="Man eating"
         className="md:max-w-[435px] md:object-contain md:-ml-28 lg:ml-0 xl:max-w-[560px]"
       />
-      <div className="mb-10 mt-12 px-6 left-curve relative">
+      <div className="mb-10 mt-12 px-6 left-curve after:content-left-curve relative">
         <h1 className="heading-l text-gunmetal mb-9">
           What your BMI result means
         </h1>
