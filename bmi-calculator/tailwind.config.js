@@ -28,10 +28,6 @@ export default {
     backgroundImage: {
       "bmi-gradient": "linear-gradient(90deg, #345FF6 0%, #587DFF 100%)",
     },
-    content: {
-      "right-curve": "url('./src/assets/images/pattern-curved-line-right.svg')",
-      "left-curve": "url('./src/assets/images/pattern-curved-line-left.svg')",
-    },
   },
   plugins: [],
 };
