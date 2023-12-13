@@ -1,0 +1,13 @@
+# Settings in the [build] context are global and are applied to
+# all contexts unless otherwise overridden by more specific contexts.
+[build]
+  # Directory where the build system installs dependencies
+  # and runs your build. Store your package.json, .nvmrc, etc here.
+  # If not set, defaults to the root directory.
+  base = "./"
+
+
+# Deploy Preview context: all deploys generated from
+# a pull/merge request will inherit these settings.
+[context.deploy-preview]
+  publish = "public/"
