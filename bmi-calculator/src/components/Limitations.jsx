@@ -7,7 +7,7 @@ import iconRace from "../assets/images/icon-race.svg";
 
 const Limitations = () => {
   return (
-    <section className="container mt-24 mb-32  xl:flex relative">
+    <section className="container mt-24 mb-32 xl:flex relative">
       <div className="xl:absolute xl:max-w-[560px] right-curve relative">
         <h2 className="heading-l text-gunmetal mb-9 text-center xl:text-left">
           Limitations of BMI
