@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html {
+  font-size: 62.5%;
+} */
+
+.display {
+  @apply text-[88px] sm:text-xl;
+  font-weight: 500;
+  line-height: 1.2;
+  line-height: 100%;
+}
+
+.heading-l {
+  @apply text-[40px] sm:text-lg;
+  font-weight: 300;
+  line-height: 105%;
+}
+
+.heading-m {
+  @apply text-[20px] sm:text-md;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.heading-s {
+  @apply text-[18px] sm:text-sm;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.shadow-btn {
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+}
+
+.background-top-left {
+  background: url("/images/pattern-background-desktop-light.svg"),
+    rgb(244 246 250) no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.dark .background-top-left {
+  background: url("/images/pattern-background-desktop-dark.svg"),
+    rgb(244 246 250) no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: white;
+  height: 16px;
+  border-radius: 100px;
+  padding: 4px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #a729f5;
+  border-radius: 100px;
+}
+
+.dark progress[value]::-webkit-progress-bar {
+  background-color: #3b4d66;
+}
+
+.dark progress[value]::-webkit-progress-value {
+  background-color: #a729f5;
+}
