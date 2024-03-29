@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import path from "path";
 
 export async function GET(req) {
   const url = new URL(req.url);
@@ -6,7 +7,7 @@ export async function GET(req) {
 
   try {
     const file = await fs.readFile(
-      path.join(__dirname, "..", "..", "..", "app", "lib", "data.json"),
+      path.resolve(process.cwd(), "app", "lib", "data.json"),
       "utf8"
     );
     const data = JSON.parse(file);
