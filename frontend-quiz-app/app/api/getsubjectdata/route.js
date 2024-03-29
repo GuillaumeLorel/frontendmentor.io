@@ -6,7 +6,7 @@ export async function GET(req) {
 
   try {
     const file = await fs.readFile(
-      path.join(__dirname, "..", "app", "lib", "data.json"),
+      path.join(__dirname, "..", "..", "..", "app", "lib", "data.json"),
       "utf8"
     );
     const data = JSON.parse(file);
