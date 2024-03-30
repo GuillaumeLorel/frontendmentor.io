@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://gl-quiz-app.netlify.app/](https://gl-quiz-app.netlify.app/)
+- Live Site URL: [https://www.frontendmentor.io/solutions/quiz-app-using-nextjs-l8NSshVz7b](https://www.frontendmentor.io/solutions/quiz-app-using-nextjs-l8NSshVz7b)
 
 ## Author
 
