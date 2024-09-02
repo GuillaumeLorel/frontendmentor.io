@@ -20,7 +20,7 @@ interface BuildBlockServerProps {
 export default async function BuildBlockServer({ title, elements, leftShape }: BuildBlockServerProps) {
   return (
     <section className="bg-secondary-sacramento-state-green py-16 sm:py-24 lg:py-36 relative">
-      <div className="wrapper flex flex-col lg:flex-row gap-16 gap-32">
+      <div className="wrapper flex flex-col lg:flex-row gap-16 lg:gap-32">
         <div className="flex flex-col justify-start gap-8 lg:gap-14 flex-[45%]">
           <div className="w-[50px] h-1 bg-primary-light-coral"></div>
           <h2 className="title-h2 text-white pr-28 lg:pr-0">{title}</h2>
@@ -52,14 +52,16 @@ export default async function BuildBlockServer({ title, elements, leftShape }: B
           })}
         </div>
       </div>
-      <div className="w-[100px] h-[244px] absolute top-0 bottom-auto lg:top-auto lg:bottom-0 right-0">
-        <Image
-          src={leftShape?.url}
-          alt={leftShape?.alt}
-          className="object-contain"
-          fill
-        />
-      </div>
+      {leftShape && (
+        <div className="w-[100px] h-[244px] absolute top-0 bottom-auto lg:top-auto lg:bottom-0 right-0">
+          <Image
+            src={leftShape.url}
+            alt={leftShape.alt ?? "default alt text"}
+            className="object-contain"
+            fill
+          />
+        </div>
+      )}
     </section>
   );
 }

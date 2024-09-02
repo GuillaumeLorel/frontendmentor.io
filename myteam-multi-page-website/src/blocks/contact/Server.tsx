@@ -2,6 +2,36 @@ import React from "react";
 import Image from "next/image";
 import { FormBlock } from "./Form/form";
 
+interface BuildBlockServerProps {
+  title: string;
+  subtitle: string;
+  elements: {
+    image: {
+      url: string;
+      alt?: string;
+    };
+    elementTitle: string;
+  }[];
+  form: {
+    title: string;
+    description: string;
+    fields: {
+      name: string;
+      label: string;
+      type: string;
+      required: boolean;
+    }[];
+  };
+  leftShape?: {
+    url: string;
+    alt?: string;
+  };
+  rightShape?: {
+    url: string;
+    alt?: string;
+  };
+}
+
 export default function BuildBlockServer({
   title,
   subtitle,
@@ -9,7 +39,7 @@ export default function BuildBlockServer({
   form,
   leftShape,
   rightShape,
-}) {
+}: BuildBlockServerProps) {
   return (
     <section className="bg-primary-midnight-green py-20 sm:py-24 lg:py-28 relative min-h-[calc(100vh-195px)] overflow-clip">
       <div className="w-[100px] h-[200px] absolute top-24 left-0 hidden sm:block">
@@ -24,7 +54,7 @@ export default function BuildBlockServer({
         <div className="flex flex-col flex-1 items-center lg:items-start gap-4 sm:gap-6 lg:gap-8">
           <h1 className="title-h1-small text-white">{title}</h1>
           <h2 className="text-[32px] font-bold text-primary-light-coral">
-            Ask us about
+            {subtitle}
           </h2>
           <div className="flex flex-col gap-2 self-start mt-6 sm:mt-0">
             {elements.map((element, index) => {
@@ -50,12 +80,14 @@ export default function BuildBlockServer({
         </div>
       </div>
       <div className="w-[80px] h-[200px] absolute bottom-[-100px] sm:bottom-0 right-0">
-        <Image
-          src={rightShape?.url}
-          alt={rightShape?.alt}
-          className="object-contain"
-          fill
-        />
+        {rightShape && (
+          <Image
+            src={rightShape.url}
+            alt={rightShape.alt ?? "default alt text"}
+            className="object-contain"
+            fill
+          />
+        )}
       </div>
     </section>
   );

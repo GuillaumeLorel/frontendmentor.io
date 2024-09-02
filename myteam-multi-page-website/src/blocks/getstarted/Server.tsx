@@ -1,11 +1,22 @@
-import React from "react";
 import Image from "next/image";
+
+interface GetStartedBlockServerProps {
+  title: string;
+  button: {
+    text: string;
+    link: string;
+  }[];
+  leftShape?: {
+    url: string;
+    alt?: string;
+  };
+}
 
 export default async function GetStartedBlockServer({
   title,
   button,
   leftShape,
-}) {
+}: GetStartedBlockServerProps) {
   return (
     <aside className="py-20 bg-primary-light-coral relative">
       <div className="wrapper flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-2">
@@ -22,12 +33,15 @@ export default async function GetStartedBlockServer({
         </a>
       </div>
       <div className="w-[200px] h-[122px] absolute bottom-0 left-0">
-        <Image
-          src={leftShape?.url}
-          alt={leftShape?.alt}
-          className="object-contain"
-          fill
-        />
+       {leftShape && (
+               <Image
+               src={leftShape?.url}
+               alt={leftShape?.alt}
+               className="object-contain"
+               fill
+             />
+       )
+        }
       </div>
     </aside>
   );
