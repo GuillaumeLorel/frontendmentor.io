@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FormBlock } from "./Form/form";
+import { Form } from "@payloadcms/plugin-form-builder/types";
 
 interface BuildBlockServerProps {
   title: string;
@@ -12,16 +13,7 @@ interface BuildBlockServerProps {
     };
     elementTitle: string;
   }[];
-  form: {
-    title: string;
-    description: string;
-    fields: {
-      name: string;
-      label: string;
-      type: string;
-      required: boolean;
-    }[];
-  };
+  form: Form;
   leftShape?: {
     url: string;
     alt?: string;
@@ -78,7 +70,7 @@ export default async function BuildBlockServer({
           </div>
         </div>
         <div className="flex-1">
-          <FormBlock form={form} confirmationType="message" />
+          <FormBlock form={form} />
         </div>
       </div>
       <div className="w-[80px] h-[200px] absolute bottom-[-100px] sm:bottom-0 right-0">

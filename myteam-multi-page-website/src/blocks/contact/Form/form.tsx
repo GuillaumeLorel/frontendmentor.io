@@ -158,9 +158,7 @@ export const FormBlock: React.FC<
             {submitButtonLabel}
           </button>
         ) : (
-          <p className="text-white">
-            {confirmationMessage.root.children[0].children[0].text}
-          </p>
+          <p className="text-white">{confirmationMessage}</p>
         )}
       </form>
     </div>
