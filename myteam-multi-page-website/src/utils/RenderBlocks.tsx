@@ -1,4 +1,3 @@
-"use client";
 import PresentationBlockServer from "@/blocks/presentation/Server";
 import BuildBlockServer from "@/blocks/build/Server";
 import TestimonialsBlockServer from "@/blocks/testimonials/Server";

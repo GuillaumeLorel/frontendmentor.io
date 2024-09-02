@@ -15,11 +15,15 @@ interface ClientsBlockServerProps {
   };
 }
 
-export default function ClientsBlockServer({ title, logos, leftShape }: ClientsBlockServerProps) {
+export default async function ClientsBlockServer({
+  title,
+  logos,
+  leftShape,
+}: ClientsBlockServerProps) {
   return (
     <section className="bg-secondary-sacramento-state-green py-[88px] sm:py-24 lg:py-36 relative">
       <div className="w-[200px] h-[100px] lg:h-[200px] absolute top-0 left-[-100px] sm:left-0">
-      {leftShape && (
+        {leftShape && (
           <Image
             src={leftShape.url}
             alt={leftShape.alt ?? "default alt text"}

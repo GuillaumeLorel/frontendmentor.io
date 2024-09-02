@@ -32,7 +32,7 @@ interface BuildBlockServerProps {
   };
 }
 
-export default function BuildBlockServer({
+export default async function BuildBlockServer({
   title,
   subtitle,
   elements,
@@ -76,7 +76,7 @@ export default function BuildBlockServer({
           </div>
         </div>
         <div className="flex-1">
-          <FormBlock form={form} />
+          <FormBlock form={form} confirmationType="message" />
         </div>
       </div>
       <div className="w-[80px] h-[200px] absolute bottom-[-100px] sm:bottom-0 right-0">

@@ -9,7 +9,7 @@ interface PresentationAboutBlockServerProps {
   };
 }
 
-export default function PresentationAboutBlockServer({
+export default async function PresentationAboutBlockServer({
   title,
   text,
   rightShape,

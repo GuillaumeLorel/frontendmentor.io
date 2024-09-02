@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useCallback } from "react";
 import { buildInitialFormState } from "./buildInitialFormState";
 import { fields } from "./fields";
@@ -82,7 +83,7 @@ export const FormBlock: React.FC<
                 form: formID,
                 submissionData: dataToSend,
               }),
-            },
+            }
           );
 
           const res = await req.json();
@@ -120,7 +121,7 @@ export const FormBlock: React.FC<
 
       submitForm();
     },
-    [formID, redirect, confirmationType],
+    [formID, redirect, confirmationType]
   );
 
   return (
