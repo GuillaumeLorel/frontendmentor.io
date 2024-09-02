@@ -3,13 +3,25 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import Image from "next/image";
 
+interface PresentationBlockServerProps {
+  title: string;
+  subtitle: string;
+  text: string;
+  leftShape?: {
+    url: string;
+  };
+  bottomShape?: {
+    url: string;
+  };
+}
+
 export default async function PresentationBlockServer({
   title,
   subtitle,
   text,
   leftShape,
   bottomShape,
-}) {
+}: PresentationBlockServerProps) {
   const titleWithSubtitle = `${title} <span class="text-primary-light-coral">${subtitle}</span>`;
 
   return (

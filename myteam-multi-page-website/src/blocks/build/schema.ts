@@ -1,4 +1,4 @@
-import { Block } from "payload";
+import {Block} from "payload"
 
 export const Build: Block = {
   slug: "build",
