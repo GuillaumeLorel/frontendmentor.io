@@ -27,7 +27,9 @@ export default async function PresentationBlockServer({
   return (
     <section className="bg-primary-midnight-green pt-20 sm:pt-28 lg:pt-32 flex items-center justify-center relative">
       <div className="absolute left-0 top-32 w-[100px] h-[200px] hidden lg:block">
-        <Image src={leftShape?.url} fill className="object-contain" />
+        {leftShape && (
+          <Image src={leftShape?.url} fill className="object-contain" alt="" />
+        )}
       </div>
       <div className="wrapper flex flex-col lg:flex-row items-center lg:items-stretch gap-4 sm:gap-6 lg:gap-10 pb-48 sm:pb-64 relative text-center lg:text-left">
         <h1
@@ -39,7 +41,14 @@ export default async function PresentationBlockServer({
           <p className="text-white base-lg">{text}</p>
         </div>
         <div className="absolute lg:right-[83px] bottom-0 w-[358px] h-[100px]">
-          <Image src={bottomShape?.url} fill className="object-contain" />
+          {bottomShape && (
+            <Image
+              src={bottomShape?.url}
+              fill
+              className="object-contain"
+              alt=""
+            />
+          )}
         </div>
       </div>
     </section>
