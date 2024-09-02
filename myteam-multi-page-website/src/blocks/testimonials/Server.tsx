@@ -35,7 +35,12 @@ export default async function TestimonialsBlockServer({
   return (
     <section className="bg-primary-midnight-green py-36 sm:py-28 lg:py-36 relative">
       <div className="absolute left-0 top-0 w-[147px] h-[100px]">
-        <Image src={leftShape?.url} fill className="object-contain" alt="" />
+        <Image
+          src={leftShape?.url ?? ""}
+          fill
+          className="object-contain"
+          alt=""
+        />
       </div>
       <div className="wrapper flex flex-col items-center gap-12 lg:gap-14">
         <h2 className="title-h2 text-white text-center max-w-[930px]">
@@ -72,7 +77,12 @@ export default async function TestimonialsBlockServer({
         </div>
       </div>
       <div className="absolute right-0 bottom-0 w-[200px] h-[100px]">
-        <Image src={rightShape?.url} fill className="object-contain" alt="" />
+        <Image
+          src={rightShape?.url ?? ""}
+          fill
+          className="object-contain"
+          alt=""
+        />
       </div>
     </section>
   );

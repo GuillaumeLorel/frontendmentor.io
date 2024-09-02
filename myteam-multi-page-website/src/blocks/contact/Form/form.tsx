@@ -118,7 +118,7 @@ export const FormBlock: React.FC<
 
       submitForm();
     },
-    [formID, redirect, confirmationType]
+    [formID, redirect, confirmationType, reset]
   );
 
   return (
