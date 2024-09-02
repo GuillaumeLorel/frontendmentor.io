@@ -1,19 +1,9 @@
 "use client";
 import React, { useState, useCallback } from "react";
+import { useForm } from "react-hook-form";
 import { buildInitialFormState } from "./buildInitialFormState";
 import { fields } from "./fields";
 import { Form as FormType } from "@payloadcms/plugin-form-builder/types";
-import { useForm } from "react-hook-form";
-
-export type Value = unknown;
-
-export interface Property {
-  [key: string]: Value;
-}
-
-export interface Data {
-  [key: string]: Value | Property | Property[];
-}
 
 export type FormBlockType = {
   blockName?: string;
@@ -34,7 +24,7 @@ export const FormBlock: React.FC<
       confirmationType,
       redirect,
       confirmationMessage,
-    } = {},
+    },
   } = props;
 
   const formMethods = useForm({
@@ -55,8 +45,8 @@ export const FormBlock: React.FC<
   >();
 
   const onSubmit = useCallback(
-    (data: Data) => {
-      let loadingTimerID: NodeJS.Timer;
+    (data) => {
+      let loadingTimerID: ReturnType<typeof setTimeout>;
 
       const submitForm = async () => {
         setError(undefined);
@@ -107,8 +97,7 @@ export const FormBlock: React.FC<
 
           if (confirmationType === "redirect" && redirect) {
             const { url } = redirect;
-
-            const redirectUrl = url;
+            window.location.href = url;
           }
         } catch (err) {
           console.warn(err);
@@ -132,7 +121,8 @@ export const FormBlock: React.FC<
           {formFromProps &&
             formFromProps.fields &&
             formFromProps.fields.map((field, index) => {
-              const Field: React.FC<any> = fields?.[field.blockType];
+              const Field: React.FC<any> | undefined =
+                fields?.[field.blockType as keyof typeof fields];
               if (Field) {
                 return (
                   <React.Fragment key={index}>

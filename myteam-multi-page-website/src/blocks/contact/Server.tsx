@@ -43,12 +43,14 @@ export default async function BuildBlockServer({
   return (
     <section className="bg-primary-midnight-green py-20 sm:py-24 lg:py-28 relative min-h-[calc(100vh-195px)] overflow-clip">
       <div className="w-[100px] h-[200px] absolute top-24 left-0 hidden sm:block">
-        <Image
-          src={leftShape?.url}
-          alt={leftShape?.alt}
-          className="object-contain"
-          fill
-        />
+        {leftShape && (
+          <Image
+            src={leftShape?.url}
+            alt={leftShape?.alt ?? "default alt text"}
+            className="object-contain"
+            fill
+          />
+        )}
       </div>
       <div className="wrapper flex flex-col lg:flex-row gap-16 lg:gap-6">
         <div className="flex flex-col flex-1 items-center lg:items-start gap-4 sm:gap-6 lg:gap-8">
