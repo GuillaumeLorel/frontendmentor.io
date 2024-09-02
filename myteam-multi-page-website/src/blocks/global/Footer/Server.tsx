@@ -14,7 +14,13 @@ export default async function FooterServer() {
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-32 items-center justify-between">
           <div className="flex flex-col items-center sm:items-start gap-6">
             <div className="relative w-24 h-6 lg:w-40 lg:h-10">
-              <Image src={footer.logo.url} fill className="object-contain" />
+              {/* @ts-ignore */}
+              <Image
+                src={footer.logo?.url}
+                fill
+                className="object-contain"
+                alt=""
+              />
             </div>
             <ul className="flex items-center gap-10">
               {footer.nav?.map((item) => (
@@ -38,7 +44,12 @@ export default async function FooterServer() {
             {footer.social?.map((item) => (
               <a key={item.id} href={item.link} className="relative w-6 h-6">
                 {/* @ts-ignore */}
-                <Image src={item.icon.url} fill className="object-contain" />
+                <Image
+                  src={item.icon?.url}
+                  fill
+                  className="object-contain"
+                  alt=""
+                />
               </a>
             ))}
           </div>

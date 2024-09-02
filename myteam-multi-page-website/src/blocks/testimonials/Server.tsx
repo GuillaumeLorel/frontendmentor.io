@@ -3,13 +3,35 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import Image from "next/image";
 
+interface TestimonialsBlockServerProps {
+  title: string;
+  subtitle: string;
+  testimonials: {
+    quote: string;
+    name: string;
+    position: string;
+    image: {
+      url: string;
+      alt?: string;
+    };
+  }[];
+  leftShape?: {
+    url: string;
+    alt?: string;
+  };
+  rightShape?: {
+    url: string;
+    alt?: string;
+  };
+}
+
 export default async function TestimonialsBlockServer({
   title,
   subtitle,
   testimonials,
   leftShape,
   rightShape,
-}) {
+}: TestimonialsBlockServerProps) {
   return (
     <section className="bg-primary-midnight-green py-36 sm:py-28 lg:py-36 relative">
       <div className="absolute left-0 top-0 w-[147px] h-[100px]">
