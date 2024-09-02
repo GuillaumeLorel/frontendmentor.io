@@ -33,15 +33,14 @@ export default async function GetStartedBlockServer({
         </a>
       </div>
       <div className="w-[200px] h-[122px] absolute bottom-0 left-0">
-       {leftShape && (
-               <Image
-               src={leftShape?.url}
-               alt={leftShape?.alt}
-               className="object-contain"
-               fill
-             />
-       )
-        }
+        {leftShape && (
+          <Image
+            src={leftShape?.url}
+            alt={leftShape?.alt ?? "default alt text"}
+            className="object-contain"
+            fill
+          />
+        )}
       </div>
     </aside>
   );

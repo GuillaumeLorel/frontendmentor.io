@@ -37,6 +37,7 @@ export default async function FooterServer() {
           <div className="flex items-center gap-4">
             {footer.social?.map((item) => (
               <a key={item.id} href={item.link} className="relative w-6 h-6">
+                {/* @ts-ignore */}
                 <Image src={item.icon.url} fill className="object-contain" />
               </a>
             ))}

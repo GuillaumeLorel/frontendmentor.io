@@ -38,6 +38,9 @@ export const RenderBlocks: React.FC<{
             const Block = blocksComponents[blockType];
 
             if (Block) {
+              {
+                /* @ts-ignore */
+              }
               return <Block key={index} id={blockName} {...block} />;
             }
           }

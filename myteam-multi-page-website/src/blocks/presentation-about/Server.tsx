@@ -24,11 +24,14 @@ export default async function PresentationAboutBlockServer({
         </div>
       </div>
       <div className="absolute right-0 bottom-[-100px] sm:bottom-0 w-[100px] h-[200px] sm:h-[200px]">
-        <Image
-          src={rightShape?.url}
-          fill
-          className="object-cover object-top sm:object-contain"
-        />
+        {rightShape && (
+          <Image
+            src={rightShape?.url}
+            alt="default alt text"
+            fill
+            className="object-cover object-top sm:object-contain"
+          />
+        )}
       </div>
     </section>
   );
