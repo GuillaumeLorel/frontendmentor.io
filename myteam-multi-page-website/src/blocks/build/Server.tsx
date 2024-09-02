@@ -1,7 +1,23 @@
 import React from "react";
 import Image from "next/image";
 
-export default async function BuildBlockServer({ title, elements, leftShape }) {
+interface BuildBlockServerProps {
+  title: string;
+  elements: {
+    image: {
+      url: string;
+    };
+    elementTitle: string;
+    elementText: string;
+  }[];
+  leftShape?: {
+    url: string;
+    alt?: string;
+  };
+}
+
+
+export default async function BuildBlockServer({ title, elements, leftShape }: BuildBlockServerProps) {
   return (
     <section className="bg-secondary-sacramento-state-green py-16 sm:py-24 lg:py-36 relative">
       <div className="wrapper flex flex-col lg:flex-row gap-16 gap-32">
