@@ -21,6 +21,13 @@ const blocksComponents = {
   contact: ContactBlockServer,
 };
 
+type BlockProps = {
+  id?: string | null;
+  [key: string]: any;
+};
+
+type BlockType = keyof typeof blocksComponents;
+
 export const RenderBlocks: React.FC<{
   blocks: Page["layout"][0][];
 }> = (props) => {
@@ -32,16 +39,18 @@ export const RenderBlocks: React.FC<{
     return (
       <Fragment>
         {blocks.map((block, index) => {
-          const { blockName, blockType } = block;
+          const { blockType } = block;
 
           if (blockType && blockType in blocksComponents) {
             const Block = blocksComponents[blockType];
 
             if (Block) {
-              {
-                /* @ts-ignore */
-              }
-              return <Block key={index} id={blockName} {...block} />;
+              return (
+                <div key={index}>
+                  {/* @ts-expect-error */}
+                  <Block {...block} />
+                </div>
+              );
             }
           }
           return null;
