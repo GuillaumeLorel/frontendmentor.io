@@ -14,6 +14,8 @@ export interface Config {
     users: User;
     media: Media;
     pages: Page;
+    forms: Form;
+    'form-submissions': FormSubmission;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -92,111 +94,307 @@ export interface Page {
   id: string;
   name: string;
   slug: string;
-  layout?:
+  layout: (
+    | {
+        title: string;
+        subtitle: string;
+        text: string;
+        leftShape?: (string | null) | Media;
+        bottomShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'presentation';
+      }
+    | {
+        title: string;
+        elements?:
+          | {
+              image?: (string | null) | Media;
+              elementTitle?: string | null;
+              elementText?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        leftShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'build';
+      }
+    | {
+        title: string;
+        subtitle: string;
+        testimonials?:
+          | {
+              quote: string;
+              name: string;
+              position: string;
+              image: string | Media;
+              id?: string | null;
+            }[]
+          | null;
+        leftShape?: (string | null) | Media;
+        rightShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonials';
+      }
+    | {
+        title: string;
+        button?:
+          | {
+              text: string;
+              link: string;
+              id?: string | null;
+            }[]
+          | null;
+        leftShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'getstarted';
+      }
+    | {
+        title: string;
+        logos?:
+          | {
+              logo?: (string | null) | Media;
+              id?: string | null;
+            }[]
+          | null;
+        leftShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'clients';
+      }
+    | {
+        title: string;
+        text: string;
+        rightShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'presentation-about';
+      }
+    | {
+        title: string;
+        members?:
+          | {
+              image?: (string | null) | Media;
+              name?: string | null;
+              role?: string | null;
+              description?: string | null;
+              socials?:
+                | {
+                    icon?: (string | null) | Media;
+                    url?: string | null;
+                    id?: string | null;
+                  }[]
+                | null;
+              id?: string | null;
+            }[]
+          | null;
+        leftShape?: (string | null) | Media;
+        rightShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'team';
+      }
+    | {
+        title: string;
+        subtitle: string;
+        elements?:
+          | {
+              image?: (string | null) | Media;
+              elementTitle?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        form: string | Form;
+        leftShape?: (string | null) | Media;
+        rightShape?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'contact';
+      }
+  )[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "forms".
+ */
+export interface Form {
+  id: string;
+  title: string;
+  fields?:
     | (
         | {
-            title: string;
-            subtitle: string;
-            text: string;
-            leftShape?: (string | null) | Media;
-            bottomShape?: (string | null) | Media;
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            defaultValue?: boolean | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'presentation';
+            blockType: 'checkbox';
           }
         | {
-            title: string;
-            elements?:
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'country';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'email';
+          }
+        | {
+            message?: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'message';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'number';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: string | null;
+            options?:
               | {
-                  image?: (string | null) | Media;
-                  elementTitle?: string | null;
-                  elementText?: string | null;
+                  label: string;
+                  value: string;
                   id?: string | null;
                 }[]
               | null;
-            leftShape?: (string | null) | Media;
+            required?: boolean | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'build';
+            blockType: 'select';
           }
         | {
-            title: string;
-            subtitle: string;
-            testimonials?:
-              | {
-                  quote: string;
-                  name: string;
-                  position: string;
-                  image: string | Media;
-                  id?: string | null;
-                }[]
-              | null;
-            leftShape?: (string | null) | Media;
-            rightShape?: (string | null) | Media;
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'testimonials';
+            blockType: 'state';
           }
         | {
-            title: string;
-            button?:
-              | {
-                  text: string;
-                  link: string;
-                  id?: string | null;
-                }[]
-              | null;
-            leftShape?: (string | null) | Media;
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: string | null;
+            required?: boolean | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'getstarted';
+            blockType: 'text';
           }
         | {
-            title: string;
-            logos?:
-              | {
-                  logo?: (string | null) | Media;
-                  id?: string | null;
-                }[]
-              | null;
-            leftShape?: (string | null) | Media;
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: string | null;
+            required?: boolean | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'clients';
-          }
-        | {
-            title: string;
-            text: string;
-            rightShape?: (string | null) | Media;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'presentation-about';
-          }
-        | {
-            title: string;
-            members?:
-              | {
-                  image?: (string | null) | Media;
-                  name?: string | null;
-                  role?: string | null;
-                  description?: string | null;
-                  socials?:
-                    | {
-                        icon?: (string | null) | Media;
-                        url?: string | null;
-                        id?: string | null;
-                      }[]
-                    | null;
-                  id?: string | null;
-                }[]
-              | null;
-            leftShape?: (string | null) | Media;
-            rightShape?: (string | null) | Media;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'team';
+            blockType: 'textarea';
           }
       )[]
+    | null;
+  submitButtonLabel?: string | null;
+  confirmationType?: ('message' | 'redirect') | null;
+  confirmationMessage?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  redirect?: {
+    url: string;
+  };
+  emails?:
+    | {
+        emailTo?: string | null;
+        cc?: string | null;
+        bcc?: string | null;
+        replyTo?: string | null;
+        emailFrom?: string | null;
+        subject: string;
+        message?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "form-submissions".
+ */
+export interface FormSubmission {
+  id: string;
+  form: string | Form;
+  submissionData?:
+    | {
+        field: string;
+        value: string;
+        id?: string | null;
+      }[]
     | null;
   updatedAt: string;
   createdAt: string;
