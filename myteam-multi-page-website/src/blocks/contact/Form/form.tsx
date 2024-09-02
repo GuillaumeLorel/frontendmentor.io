@@ -11,6 +11,14 @@ export type FormBlockType = {
   form: FormType;
 };
 
+type FormData = {
+  name: string;
+  email: string;
+  "company-name": string;
+  title: string;
+  message: string;
+};
+
 export const FormBlock: React.FC<
   FormBlockType & {
     id?: string;
@@ -45,7 +53,7 @@ export const FormBlock: React.FC<
   >();
 
   const onSubmit = useCallback(
-    (data) => {
+    (data: FormData) => {
       let loadingTimerID: ReturnType<typeof setTimeout>;
 
       const submitForm = async () => {
