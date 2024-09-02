@@ -2,14 +2,41 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+interface TeamBlockServerProps {
+  title: string;
+  members: {
+    name: string;
+    role: string;
+    image: {
+      url: string;
+    };
+    description: string;
+    socials: {
+      icon: {
+        url: string;
+      };
+      link: string;
+    }[];
+  }[];
+  leftShape?: {
+    url: string;
+  };
+  rightShape?: {
+    url: string;
+  };
+}
+
 export default function TeamBlockServer({
   title,
   members,
   leftShape,
   rightShape,
-}) {
+}: TeamBlockServerProps) {
   const [visibleMemberIndex, setVisibleMemberIndex] = useState(null);
 
+  {
+    /* @ts-ignore */
+  }
   const handleClick = (index) => {
     setVisibleMemberIndex(visibleMemberIndex === index ? null : index);
   };

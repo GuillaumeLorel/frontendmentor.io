@@ -14,7 +14,7 @@ export type FormBlockType = {
 type FormData = {
   name: string;
   email: string;
-  "company-name": string;
+  company_name: string;
   title: string;
   message: string;
 };
@@ -35,7 +35,7 @@ export const FormBlock: React.FC<
     },
   } = props;
 
-  const formMethods = useForm({
+  const formMethods = useForm<FormData>({
     defaultValues: buildInitialFormState(formFromProps.fields),
   });
   const {
