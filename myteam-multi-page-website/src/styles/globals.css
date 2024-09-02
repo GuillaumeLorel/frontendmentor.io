@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.wrapper{
+    @apply max-w-[1440px] px-6 sm:px-[100px] lg:px-[165px] mx-auto;
+}
+
+.title-h1{
+    @apply text-[40px] leading-[40px] sm:text-[64px] sm:leading-[56px] lg:text-[70px] lg:leading-[70px] xl:text-h1 xl:leading-h1 font-bold;
+}
+
+.title-h1-small{
+    @apply text-[40px] leading-[40px] sm:text-[64px] sm:leading-[64px] font-bold;
+}
+
+.title-h2{
+    @apply text-[32px] leading-8 lg:text-h2 lg:leading-h2 font-bold;
+}
+
+.title-h3{
+    @apply text-h3 leading-h3 font-bold;
+}
+
+.base{
+    @apply text-base leading-base font-semibold
+}
+
+.base-lg{
+    @apply text-[15px] leading-[28px] lg:text-[18px] lg:leading-7 font-semibold;
+}
