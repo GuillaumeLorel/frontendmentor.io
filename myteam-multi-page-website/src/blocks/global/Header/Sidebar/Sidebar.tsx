@@ -2,7 +2,25 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-export default function Sidebar({ header }) {
+interface NavItem {
+  link: string;
+  label: string;
+}
+
+interface CTA {
+  link: string;
+  label: string;
+}
+
+interface Header {
+  nav?: NavItem[] | null;
+  cta?: CTA | null;
+}
+interface SidebarProps {
+  header: Header;
+}
+
+export default function Sidebar({ header }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
