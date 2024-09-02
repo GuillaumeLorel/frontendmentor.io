@@ -40,6 +40,7 @@ export const Pages: CollectionConfig = {
         Team,
         Contact,
       ],
+      required: true,
     },
   ],
 };
