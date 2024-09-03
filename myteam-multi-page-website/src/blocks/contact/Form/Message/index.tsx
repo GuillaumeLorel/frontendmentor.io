@@ -1,13 +1,7 @@
 import React from "react";
-
-interface MessageField {
-  message: string;
-}
+import { MessageField } from "@payloadcms/plugin-form-builder/types";
 
 export const Message: React.FC<MessageField> = ({ message }) => {
-  return (
-    <div>
-      <p>{message}</p>
-    </div>
-  );
+  console.log(message);
+  return <div>{/* <p>{message}</p> */}</div>;
 };
