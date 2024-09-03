@@ -37,6 +37,7 @@ export default async function FooterServer() {
                 fill
                 className="object-contain"
                 alt="Logo myteam"
+                loading="eager"
               />
             </div>
             <ul className="flex items-center gap-10">
@@ -68,6 +69,7 @@ export default async function FooterServer() {
                       fill
                       className="object-contain"
                       alt=""
+                      loading="eager"
                     />
                   )}
               </a>

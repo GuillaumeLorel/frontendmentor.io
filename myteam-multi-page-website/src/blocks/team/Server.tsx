@@ -40,6 +40,7 @@ export default function TeamBlockServer({
           fill
           className="object-contain"
           alt="Left shape team"
+          loading="eager"
         />
       </div>
       <div className="wrapper flex flex-col items-center gap-16">
@@ -56,7 +57,8 @@ export default function TeamBlockServer({
                     src={member.image.url}
                     fill
                     className="object-contain"
-                    alt=""
+                    alt="Member image"
+                    loading="eager"
                   />
                 </div>
                 <p className="text-lg text-secondary-rapture-blue font-bold mt-4">
@@ -92,6 +94,7 @@ export default function TeamBlockServer({
                           fill
                           className="object-contain"
                           alt=""
+                          loading="eager"
                         />
                       </a>
                     ))}
@@ -132,6 +135,7 @@ export default function TeamBlockServer({
           fill
           className="object-contain"
           alt="Right shape team"
+          loading="eager"
         />
       </div>
     </section>

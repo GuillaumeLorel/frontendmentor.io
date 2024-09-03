@@ -33,6 +33,7 @@ export default async function GetStartedBlockServer({
           alt="Shape get started"
           className="object-contain"
           fill
+          loading="eager"
         />
       </div>
     </aside>

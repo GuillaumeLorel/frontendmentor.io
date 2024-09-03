@@ -30,6 +30,7 @@ export default async function BuildBlockServer({
           alt="Shape left contact"
           className="object-contain"
           fill
+          loading="eager"
         />
       </div>
       <div className="wrapper flex flex-col lg:flex-row gap-16 lg:gap-6">
@@ -67,6 +68,7 @@ export default async function BuildBlockServer({
           alt="Shape right content"
           className="object-contain"
           fill
+          loading="eager"
         />
       </div>
     </section>

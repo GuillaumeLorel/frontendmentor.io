@@ -22,6 +22,7 @@ export default async function PresentationBlockServer({
           fill
           className="object-contain"
           alt="Circle left pres home"
+          loading="eager"
         />
       </div>
       <div className="wrapper flex flex-col lg:flex-row items-center lg:items-stretch gap-4 sm:gap-6 lg:gap-10 pb-48 sm:pb-64 relative text-center lg:text-left">
@@ -39,6 +40,7 @@ export default async function PresentationBlockServer({
             fill
             className="object-contain"
             alt="Circle bottom pres home"
+            loading="eager"
           />
         </div>
       </div>

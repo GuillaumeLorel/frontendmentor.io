@@ -25,6 +25,7 @@ export default async function PresentationAboutBlockServer({
           alt="Right shape about"
           fill
           className="object-cover object-top sm:object-contain"
+          loading="eager"
         />
       </div>
     </section>

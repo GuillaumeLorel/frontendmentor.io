@@ -20,6 +20,7 @@ export default async function HeaderServer() {
               fill
               className="object-contain"
               alt="Logo myteam"
+              loading="eager"
             />
           </div>
           <nav>

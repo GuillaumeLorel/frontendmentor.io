@@ -23,6 +23,7 @@ export default async function ClientsBlockServer({
           alt="Shape left clients"
           className="object-bottom object-cover lg:object-contain"
           fill
+          loading="eager"
         />
       </div>
       <div className="wrapper flex flex-col items-center gap-16 sm:px-10 lg:px-[165px]">

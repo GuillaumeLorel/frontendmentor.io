@@ -28,6 +28,7 @@ export default async function TestimonialsBlockServer({
           fill
           className="object-contain"
           alt="Shape left testimonials"
+          loading="eager"
         />
       </div>
       <div className="wrapper flex flex-col items-center gap-12 lg:gap-14">
@@ -47,6 +48,7 @@ export default async function TestimonialsBlockServer({
                 height={56}
                 className="object-contain mb-[-45px]"
                 alt=""
+                loading="eager"
               />
               <blockquote className="text-center text-white base">
                 {quote}
@@ -58,7 +60,13 @@ export default async function TestimonialsBlockServer({
                 </p>
               </div>
               <div className="w-16 h-16 relative outline outline-2 outline-white rounded-full">
-                <Image src={image.url} fill className="object-contain" alt="" />
+                <Image
+                  src={image.url}
+                  fill
+                  className="object-contain"
+                  alt=""
+                  loading="eager"
+                />
               </div>
             </article>
           ))}
@@ -70,6 +78,7 @@ export default async function TestimonialsBlockServer({
           fill
           className="object-contain"
           alt="Shape right testimonials"
+          loading="eager"
         />
       </div>
     </section>
