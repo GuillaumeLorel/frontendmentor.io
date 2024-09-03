@@ -99,8 +99,6 @@ export interface Page {
         title: string;
         subtitle: string;
         text: string;
-        leftShape?: (string | null) | Media;
-        bottomShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'presentation';
@@ -115,7 +113,6 @@ export interface Page {
               id?: string | null;
             }[]
           | null;
-        leftShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'build';
@@ -147,7 +144,6 @@ export interface Page {
               id?: string | null;
             }[]
           | null;
-        leftShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'getstarted';
@@ -160,7 +156,6 @@ export interface Page {
               id?: string | null;
             }[]
           | null;
-        leftShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'clients';
@@ -168,7 +163,6 @@ export interface Page {
     | {
         title: string;
         text: string;
-        rightShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'presentation-about';
@@ -191,8 +185,6 @@ export interface Page {
               id?: string | null;
             }[]
           | null;
-        leftShape?: (string | null) | Media;
-        rightShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'team';
@@ -208,8 +200,6 @@ export interface Page {
             }[]
           | null;
         form: string | Form;
-        leftShape?: (string | null) | Media;
-        rightShape?: (string | null) | Media;
         id?: string | null;
         blockName?: string | null;
         blockType: 'contact';
@@ -439,7 +429,6 @@ export interface PayloadMigration {
  */
 export interface Header {
   id: string;
-  logo: string | Media;
   nav?:
     | {
         label: string;
@@ -460,7 +449,6 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  logo: string | Media;
   nav?:
     | {
         label: string;

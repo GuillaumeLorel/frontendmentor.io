@@ -1,6 +1,4 @@
 import React from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
 import Image from "next/image";
 
 interface TestimonialsBlockServerProps {
@@ -15,31 +13,21 @@ interface TestimonialsBlockServerProps {
       alt?: string;
     };
   }[];
-  leftShape?: {
-    url: string;
-    alt?: string;
-  };
-  rightShape?: {
-    url: string;
-    alt?: string;
-  };
 }
 
 export default async function TestimonialsBlockServer({
   title,
   subtitle,
   testimonials,
-  leftShape,
-  rightShape,
 }: TestimonialsBlockServerProps) {
   return (
     <section className="bg-primary-midnight-green py-36 sm:py-28 lg:py-36 relative">
       <div className="absolute left-0 top-0 w-[147px] h-[100px]">
         <Image
-          src={leftShape?.url ?? ""}
+          src="/shape-left-testimonials.svg"
           fill
           className="object-contain"
-          alt=""
+          alt="Shape left testimonials"
         />
       </div>
       <div className="wrapper flex flex-col items-center gap-12 lg:gap-14">
@@ -78,10 +66,10 @@ export default async function TestimonialsBlockServer({
       </div>
       <div className="absolute right-0 bottom-0 w-[200px] h-[100px]">
         <Image
-          src={rightShape?.url ?? ""}
+          src="/shape-right-testimonials.svg"
           fill
           className="object-contain"
-          alt=""
+          alt="Shape right testimonials"
         />
       </div>
     </section>

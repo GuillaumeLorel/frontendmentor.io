@@ -18,27 +18,16 @@ interface TeamBlockServerProps {
       link: string;
     }[];
   }[];
-  leftShape?: {
-    url: string;
-  };
-  rightShape?: {
-    url: string;
-  };
 }
 
 export default function TeamBlockServer({
   title,
   members,
-  leftShape,
-  rightShape,
 }: TeamBlockServerProps) {
   const [visibleMemberIndex, setVisibleMemberIndex] = useState<number | null>(
     null
   );
 
-  {
-    /* @ts-ignore */
-  }
   const handleClick = (index: number | null) => {
     setVisibleMemberIndex(visibleMemberIndex === index ? null : index);
   };
@@ -46,9 +35,12 @@ export default function TeamBlockServer({
   return (
     <section className="bg-secondary-deep-jungle-green py-36 relative overflow-clip">
       <div className="absolute left-0 top-[-100px] sm:top-0 sm:bottom-0 w-[100px] h-[200px]">
-        {leftShape && (
-          <Image src={leftShape?.url} fill className="object-contain" alt="" />
-        )}
+        <Image
+          src="/left-shape-team.svg"
+          fill
+          className="object-contain"
+          alt="Left shape team"
+        />
       </div>
       <div className="wrapper flex flex-col items-center gap-16">
         <h2 className="title-h2 text-white">{title}</h2>
@@ -135,9 +127,12 @@ export default function TeamBlockServer({
         </div>
       </div>
       <div className="absolute right-0 bottom-0 w-[147px] h-[100px]">
-        {rightShape && (
-          <Image src={rightShape?.url} fill className="object-contain" alt="" />
-        )}
+        <Image
+          src="/right-shape-team.svg"
+          fill
+          className="object-contain"
+          alt="Right shape team"
+        />
       </div>
     </section>
   );

@@ -10,14 +10,12 @@ interface BuildBlockServerProps {
     elementTitle: string;
     elementText: string;
   }[];
-  leftShape?: {
-    url: string;
-    alt?: string;
-  };
 }
 
-
-export default async function BuildBlockServer({ title, elements, leftShape }: BuildBlockServerProps) {
+export default async function BuildBlockServer({
+  title,
+  elements,
+}: BuildBlockServerProps) {
   return (
     <section className="bg-secondary-sacramento-state-green py-16 sm:py-24 lg:py-36 relative">
       <div className="wrapper flex flex-col lg:flex-row gap-16 lg:gap-32">
@@ -52,16 +50,14 @@ export default async function BuildBlockServer({ title, elements, leftShape }: B
           })}
         </div>
       </div>
-      {leftShape && (
-        <div className="w-[100px] h-[244px] absolute top-0 bottom-auto lg:top-auto lg:bottom-0 right-0">
-          <Image
-            src={leftShape.url}
-            alt={leftShape.alt ?? "default alt text"}
-            className="object-contain"
-            fill
-          />
-        </div>
-      )}
+      <div className="w-[100px] h-[244px] absolute top-0 bottom-auto lg:top-auto lg:bottom-0 right-0">
+        <Image
+          src="/shape-build-section.svg"
+          alt="Shape build section"
+          className="object-contain"
+          fill
+        />
+      </div>
     </section>
   );
 }

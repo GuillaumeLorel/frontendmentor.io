@@ -21,13 +21,6 @@ const blocksComponents = {
   contact: ContactBlockServer,
 };
 
-type BlockProps = {
-  id?: string | null;
-  [key: string]: any;
-};
-
-type BlockType = keyof typeof blocksComponents;
-
 export const RenderBlocks: React.FC<{
   blocks: Page["layout"][0][];
 }> = (props) => {

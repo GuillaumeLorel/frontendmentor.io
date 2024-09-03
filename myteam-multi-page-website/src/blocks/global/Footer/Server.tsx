@@ -21,14 +21,6 @@ interface SocialItem {
   };
 }
 
-interface Footer {
-  logo: Logo | null;
-  nav: NavItem[];
-  address: string;
-  social: SocialItem[];
-  copyright: string;
-}
-
 export default async function FooterServer() {
   const payload = await getPayloadHMR({ config });
   const footer = await payload.findGlobal({
@@ -40,16 +32,12 @@ export default async function FooterServer() {
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-32 items-center justify-between">
           <div className="flex flex-col items-center sm:items-start gap-6">
             <div className="relative w-24 h-6 lg:w-40 lg:h-10">
-              {typeof footer.logo === "object" &&
-                footer.logo !== null &&
-                "url" in footer.logo && (
-                  <Image
-                    src={footer.logo.url ?? ""}
-                    fill
-                    className="object-contain"
-                    alt=""
-                  />
-                )}
+              <Image
+                src="/logo.svg"
+                fill
+                className="object-contain"
+                alt="Logo myteam"
+              />
             </div>
             <ul className="flex items-center gap-10">
               {footer.nav?.map((item) => (

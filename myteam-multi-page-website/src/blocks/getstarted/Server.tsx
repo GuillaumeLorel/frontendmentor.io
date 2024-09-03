@@ -6,16 +6,11 @@ interface GetStartedBlockServerProps {
     text: string;
     link: string;
   }[];
-  leftShape?: {
-    url: string;
-    alt?: string;
-  };
 }
 
 export default async function GetStartedBlockServer({
   title,
   button,
-  leftShape,
 }: GetStartedBlockServerProps) {
   return (
     <aside className="py-20 bg-primary-light-coral relative">
@@ -33,14 +28,12 @@ export default async function GetStartedBlockServer({
         </a>
       </div>
       <div className="w-[200px] h-[122px] absolute bottom-0 left-0">
-        {leftShape && (
-          <Image
-            src={leftShape?.url}
-            alt={leftShape?.alt ?? "default alt text"}
-            className="object-contain"
-            fill
-          />
-        )}
+        <Image
+          src="/shape-get-started.svg"
+          alt="Shape get started"
+          className="object-contain"
+          fill
+        />
       </div>
     </aside>
   );

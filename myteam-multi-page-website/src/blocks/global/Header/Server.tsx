@@ -15,16 +15,12 @@ export default async function HeaderServer() {
       <div className="flex items-center justify-between max-w-[1440px] px-6 sm:px-10 lg:px-[165px] mx-auto">
         <div className="flex items-center gap-20 w-full sm:justify-start justify-between">
           <div className="relative w-40 h-10">
-            {typeof header.logo === "object" &&
-              header.logo !== null &&
-              "url" in header.logo && (
-                <Image
-                  src={header.logo.url ?? ""}
-                  fill
-                  className="object-contain"
-                  alt=""
-                />
-              )}
+            <Image
+              src="/logo.svg"
+              fill
+              className="object-contain"
+              alt="Logo myteam"
+            />
           </div>
           <nav>
             <ul className="items-center gap-10 hidden sm:flex">

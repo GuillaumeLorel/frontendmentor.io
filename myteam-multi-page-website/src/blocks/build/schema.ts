@@ -1,64 +1,43 @@
-import { Block } from "payload"
+import { Block } from "payload";
 
 export const Build: Block = {
   slug: "build",
   fields: [
     {
-      type: "tabs",
-      tabs: [
+      type: "row",
+      fields: [
         {
-          label: "Content",
-          fields: [
-            {
-              type: "row",
-              fields: [
-                {
-                  name: "title",
-                  label: "Title",
-                  type: "text",
-                  required: true,
-                  admin: {
-                    width: "50%",
-                  },
-                },
-                {
-                  name: "elements",
-                  label: "Elements",
-                  type: "array",
-                  admin: {
-                    width: "50%",
-                  },
-                  fields: [
-                    {
-                      name: "image",
-                      label: "Image",
-                      type: "upload",
-                      relationTo: "media",
-                    },
-                    {
-                      name: "elementTitle",
-                      label: "Title",
-                      type: "text",
-                    },
-                    {
-                      name: "elementText",
-                      label: "Text",
-                      type: "textarea",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
+          name: "title",
+          label: "Title",
+          type: "text",
+          required: true,
+          admin: {
+            width: "50%",
+          },
         },
         {
-          label: "Shapes",
+          name: "elements",
+          label: "Elements",
+          type: "array",
+          admin: {
+            width: "50%",
+          },
           fields: [
             {
-              name: "leftShape",
-              label: "Left Shape",
+              name: "image",
+              label: "Image",
               type: "upload",
               relationTo: "media",
+            },
+            {
+              name: "elementTitle",
+              label: "Title",
+              type: "text",
+            },
+            {
+              name: "elementText",
+              label: "Text",
+              type: "textarea",
             },
           ],
         },

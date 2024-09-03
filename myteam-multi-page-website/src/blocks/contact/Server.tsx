@@ -14,14 +14,6 @@ interface BuildBlockServerProps {
     elementTitle: string;
   }[];
   form: Form;
-  leftShape?: {
-    url: string;
-    alt?: string;
-  };
-  rightShape?: {
-    url: string;
-    alt?: string;
-  };
 }
 
 export default async function BuildBlockServer({
@@ -29,20 +21,16 @@ export default async function BuildBlockServer({
   subtitle,
   elements,
   form,
-  leftShape,
-  rightShape,
 }: BuildBlockServerProps) {
   return (
     <section className="bg-primary-midnight-green py-20 sm:py-24 lg:py-28 relative min-h-[calc(100vh-195px)] overflow-clip">
       <div className="w-[100px] h-[200px] absolute top-24 left-0 hidden sm:block">
-        {leftShape && (
-          <Image
-            src={leftShape?.url}
-            alt={leftShape?.alt ?? "default alt text"}
-            className="object-contain"
-            fill
-          />
-        )}
+        <Image
+          src="/left-shape-contact.svg"
+          alt="Shape left contact"
+          className="object-contain"
+          fill
+        />
       </div>
       <div className="wrapper flex flex-col lg:flex-row gap-16 lg:gap-6">
         <div className="flex flex-col flex-1 items-center lg:items-start gap-4 sm:gap-6 lg:gap-8">
@@ -74,14 +62,12 @@ export default async function BuildBlockServer({
         </div>
       </div>
       <div className="w-[80px] h-[200px] absolute bottom-[-100px] sm:bottom-0 right-0">
-        {rightShape && (
-          <Image
-            src={rightShape.url}
-            alt={rightShape.alt ?? "default alt text"}
-            className="object-contain"
-            fill
-          />
-        )}
+        <Image
+          src="/right-shape-content.svg"
+          alt="Shape right content"
+          className="object-contain"
+          fill
+        />
       </div>
     </section>
   );

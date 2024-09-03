@@ -4,15 +4,11 @@ import Image from "next/image";
 interface PresentationAboutBlockServerProps {
   title: string;
   text: string;
-  rightShape?: {
-    url: string;
-  };
 }
 
 export default async function PresentationAboutBlockServer({
   title,
   text,
-  rightShape,
 }: PresentationAboutBlockServerProps) {
   return (
     <section className="bg-primary-midnight-green pt-16 pb-28 sm:pt-24 lg:pb-32 lg:pt-24 flex items-center justify-center relative">
@@ -24,14 +20,12 @@ export default async function PresentationAboutBlockServer({
         </div>
       </div>
       <div className="absolute right-0 bottom-[-100px] sm:bottom-0 w-[100px] h-[200px] sm:h-[200px]">
-        {rightShape && (
-          <Image
-            src={rightShape?.url}
-            alt="default alt text"
-            fill
-            className="object-cover object-top sm:object-contain"
-          />
-        )}
+        <Image
+          src="/right-shape-about.svg"
+          alt="Right shape about"
+          fill
+          className="object-cover object-top sm:object-contain"
+        />
       </div>
     </section>
   );

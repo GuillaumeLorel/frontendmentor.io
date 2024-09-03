@@ -4,13 +4,6 @@ export const Footer: GlobalConfig = {
   slug: "footer",
   fields: [
     {
-      name: "logo",
-      label: "Logo",
-      type: "upload",
-      relationTo: "media",
-      required: true,
-    },
-    {
       name: "nav",
       label: "Navigation",
       type: "array",
@@ -59,6 +52,6 @@ export const Footer: GlobalConfig = {
       label: "Copyright",
       type: "text",
       required: true,
-    }
+    },
   ],
 };
