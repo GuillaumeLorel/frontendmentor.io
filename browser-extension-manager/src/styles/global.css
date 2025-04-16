@@ -1,0 +1,60 @@
+:root {
+  /* Neutral colors */
+  --color-neutral-900: #091540;
+  --color-neutral-800: #202535;
+  --color-neutral-700: #2f364b;
+  --color-neutral-600: #535868;
+  --color-neutral-300: #c6c6c6;
+  --color-neutral-200: #d6e2f5;
+  --color-neutral-100: #eeeeee;
+  --color-neutral-0: #fbfdfe;
+
+  /* Red colors */
+  --color-red-700: #c7231a;
+  --color-red-500: #de4840;
+  --color-red-400: #f25c54;
+
+  /* Gradient colors */
+  --color-light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eefbf9 100%);
+  --color-dark-gradient: linear-gradient(180deg, #0d1117 0%, #0d1117 100%);
+
+  /* Default to light theme */
+  --color-background: var(--color-light-gradient);
+  --color-text: var(--color-neutral-900);
+  --color-primary: var(--color-neutral-0);
+  --color-border: var(--color-neutral-200);
+
+  font-family: "Noto Sans", sans-serif;
+}
+
+body[data-theme="dark"] {
+  --color-background: var(--color-dark-gradient);
+  --color-text: var(--color-neutral-0);
+  --color-primary: var(--color-neutral-800);
+  --color-border: var(--color-neutral-700);
+}
+
+body {
+  background: var(--color-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+.app {
+  max-width: 144rem;
+  margin-inline: auto;
+  padding-block: 4rem 6rem;
+  padding-inline: 13.5rem;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    padding-block: 2.4rem 6.4rem;
+    padding-inline: 3.2rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-inline: 1.6rem;
+  }
+}
