@@ -16,13 +16,15 @@
 
   /* Gradient colors */
   --color-light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eefbf9 100%);
-  --color-dark-gradient: linear-gradient(180deg, #0d1117 0%, #0d1117 100%);
+  --color-dark-gradient: linear-gradient(180deg, #04091b 0%, #091540 100%), #fff;
 
   /* Default to light theme */
   --color-background: var(--color-light-gradient);
   --color-text: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-600);
   --color-primary: var(--color-neutral-0);
   --color-border: var(--color-neutral-200);
+  --color-background-accent: var(--color-red-700);
 
   font-family: "Noto Sans", sans-serif;
 }
@@ -30,8 +32,10 @@
 body[data-theme="dark"] {
   --color-background: var(--color-dark-gradient);
   --color-text: var(--color-neutral-0);
+  --color-text-secondary: var(--color-neutral-300);
   --color-primary: var(--color-neutral-800);
-  --color-border: var(--color-neutral-700);
+  --color-border: var(--color-neutral-600);
+  --color-background-accent: var(--color-red-400);
 }
 
 body {

@@ -1,0 +1,80 @@
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 6.4rem 3.2rem;
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .filter__title {
+    font-size: 3.4rem;
+    font-weight: 700;
+  }
+
+  .filter__btnContainer {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .filter__btn {
+    border: 1px solid var(--color-border);
+    border-radius: 20rem;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-size: 2rem;
+    padding: 0.8rem 2rem;
+    box-shadow: 0px 2px 3px 0px #d9e5f4;
+    cursor: pointer;
+
+    &.active {
+      background-color: var(--color-background-accent);
+      color: var(--color-neutral-0);
+
+      &:hover {
+        background-color: var(--color-red-500);
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 0px 2px var(--color-neutral-0, #fbfdfe),
+          0px 0px 0px 4px var(--color-red-400, #f25c54);
+      }
+    }
+
+    &:hover:not(.active) {
+      opacity: 0.7;
+    }
+
+    &:focus:not(.active) {
+      box-shadow: 0px 0px 0px 2px var(--color-neutral-200, #d6e2f5),
+        0px 0px 0px 4px var(--color-red-400, #f25c54);
+    }
+  }
+}
+
+body[data-theme="dark"] .filter__btn {
+  box-shadow: none;
+
+  &.active {
+    color: var(--color-neutral-900);
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px var(--color-neutral-900, #091540),
+        0px 0px 0px 4px var(--color-red-400, #f25c54);
+    }
+  }
+
+  &:hover:not(.active) {
+    opacity: 1;
+    background-color: var(--color-neutral-600);
+  }
+
+  &:focus:not(.active) {
+    box-shadow: 0px 0px 0px 2px var(--color-neutral-900, #091540),
+      0px 0px 0px 4px var(--color-red-400, #f25c54);
+  }
+}

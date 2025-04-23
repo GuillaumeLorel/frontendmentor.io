@@ -8,6 +8,7 @@
 /* 2. Remove default margin */
 * {
   margin: 0;
+  outline: none;
 }
 
 /* 3. Enable keyword animations */

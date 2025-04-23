@@ -9,8 +9,27 @@
   border-radius: 1.2rem;
   background-color: var(--background);
   border: 0;
+  cursor: pointer;
+
+  &:hover {
+    --background: var(--color-neutral-300);
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px var(--color-neutral-0, #fbfdfe),
+      0px 0px 0px 4px var(--color-red-400, #f25c54);
+  }
 }
 
 body[data-theme="dark"] .themeToggle {
   --background: var(--color-neutral-700);
+
+  &:hover {
+    --background: var(--color-neutral-600);
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px var(--color-neutral-800, #202535),
+      0px 0px 0px 4px var(--color-red-400, #f25c54);
+  }
 }
